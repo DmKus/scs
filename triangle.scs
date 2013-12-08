@@ -51,8 +51,8 @@ triangle<=set_nrel_subdividing:
 triangle<=set_nrel_subdividing:
 {
 	sc_node_not_relation->oxygon(*=>nrel_main_ru_idtf:[остроугольный треугольник];;*);
-	sc_node_not_relation->oxygon(*=>nrel_main_ru_idtf:[прямоугольный треугольник];;*);
-	sc_node_not_relation->oxygon(*=>nrel_main_ru_idtf:[тупоугольный треугольник;;*)
+	sc_node_not_relation->right_triangle(*=>nrel_main_ru_idtf:[прямоугольный треугольник];;*);
+	sc_node_not_relation->obtuse_triangle(*=>nrel_main_ru_idtf:[тупоугольный треугольник;;*)
 }(*<=set_comment:[Разбиение по признаку величины углов](*<-lang_ru;;*);;*);;
 
 
