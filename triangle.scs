@@ -1,0 +1,91 @@
+triangle<-sc_node_not_relation;;
+
+
+/*вопрос: какой вариант лучше использовать? 
+В Belarus.scs используется такие штуки nrel_main_ru_idtf и nrel_main_en_idtf, но определения я их не нашел.
+Еще такой вопрос: как можно генерить осмысленные английские названия переменных? 
+Нужно хранить где-то какой-то словарь со всеми терминами?*/
+
+
+//    1
+triangle=>nrel_main_idtf:[Треугольник](*<-lang_ru;;*);;
+triangle=>nrel_iftd:[Класс треугольников](*<-lang_ru;;*);;
+triangle=>nrel_iftd:[плоский треугольник](*<-lang_ru;;*);;
+triangle=>nrel_iftd:[Понятие треугольника](*<-lang_ru;;*);;
+triangle=>nrel_iftd:[Множество всевозможных треугольников](*<-lang_ru;;*);;
+triangle=>nrel_iftd:[Множество знаков всевозможных треугольников](*<-lang_ru;;*);;
+triangle=>nrel_iftd:[многоугольник с тремя сторонами](*<-lang_ru;;*);;
+triangle=>nrel_iftd:[triangle](*<-lang_en;;*);;
+
+/*     2
+triangle=>nrel_main_ru_idtf:[Треугольник];;
+trianglr=>nrel_ru_idtf:[класс треугольников];[плоский треугольник];[Понятие треугольника];
+[Множество всевозможных треугольников];[Множество всевозможных треугольников];
+[Множество знаков всевозможных треугольников];[многоугольник с тремя сторонами];;
+triangle=>nrel_en_iftd:[triangle];;
+*/
+
+/*	1
+convex_triangle<-sc_node_not_relation;;
+convex_triangle=>nrel_main_ru_idtf:[выпуклый многоугольник];;
+isosceles_triangle<-sc_node_not_relation;;
+isosceles_triangle=>nrel_main_ru_idtf:[равнобедренный треугольник];;
+*/
+
+//	2
+sc_node_not_relation->convex_triangle(*=>nrel_main_ru_idtf:[выпуклый многоугольник];;*);;
+sc_node_not_relation->isosceles_triangle(*=>nrel_main_ru_idtf:[равнобедренный треугольник];;*);;
+
+
+triangle<=set_nrel_subdividing:
+{
+	sc_node_not_relation->versatile_triangle(*=>nrel_main_ru_idtf:[разносторонний треугольник];;*);
+	sc_node_not_relation->convex_triangle(*=>nrel_main_ru_idtf:[выпуклый многоугольник];;*);
+	sc_node_not_relation->strictly_isosceles_triangle(*=>nrel_main_ru_idtf:[строго равнобедренный треугольник];;*);
+	sc_node_not_relation->equilateral_triangle(*=>nrel_main_ru_idtf:[строго равнобедренный треугольник];;*)
+}(*<=set_comment:[Разбиение по признаку конгруэнтности сторон](*<-lang_ru;;*);;*);;
+
+triangle<=set_nrel_subdividing:
+{
+	sc_node_not_relation->oxygon(*=>nrel_main_ru_idtf:[остроугольный треугольник];;*);
+	sc_node_not_relation->oxygon(*=>nrel_main_ru_idtf:[прямоугольный треугольник];;*);
+	sc_node_not_relation->oxygon(*=>nrel_main_ru_idtf:[тупоугольный треугольник;;*)
+}(*<=set_comment:[Разбиение по признаку величины углов](*<-lang_ru;;*);;*);;
+
+
+/*тут я создал для SCnFieldSpecRelDomainSet отношение: set_domain_set.scs*/
+
+triangle<=set_domain_set:
+{
+	nrel_congruence;
+	nrel_similarity
+};;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
