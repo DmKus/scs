@@ -6,7 +6,7 @@ set_domain_set=> nrel_main_en_idtf:
 
 set_domain_set <- set_binary_relation ;;
 
-set_domain_of_definition => nrel_definition:
+set_domain_set => nrel_definition:
         [Отношения, которые связывают описываемые понятия между собой - это бинарное  отношение между описываемым множеством и отношениями области определения которых являются надмножеством описываемого множества и каждая связка которых связывает элементы описываемого множества между собой.] ;;
         
 set_domain_set => hypermedia_nrel_explanation:
