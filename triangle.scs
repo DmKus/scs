@@ -36,6 +36,9 @@ isosceles_triangle=>nrel_main_ru_idtf:[равнобедренный треугольник];;
 sc_node_not_relation->convex_triangle(*=>nrel_main_ru_idtf:[выпуклый многоугольник];;*);;
 sc_node_not_relation->isosceles_triangle(*=>nrel_main_ru_idtf:[равнобедренный треугольник];;*);;
 
+triangle=>set_nrel_inclusion:convex_triangle;;
+triangle<=set_nrel_inclusion:isosceles_triangle;;
+
 
 triangle<=set_nrel_subdividing:
 {
@@ -53,28 +56,60 @@ triangle<=set_nrel_subdividing:
 }(*<=set_comment:[Разбиение по признаку величины углов](*<-lang_ru;;*);;*);;
 
 
-/*тут я создал для SCnFieldSpecRelDomainSet отношение: set_domain_set.scs*/
+/*тут я создал для SCnFieldSpecRelDomainSet отношение: set_domain_set.scs и 
+set_domain_super_set для SCnFieldSpecRelDomainSuperSet*/
+/*и вот эти штуки nrel_congruence, nrel_similarity нам их нужно тоже создавать и описывать?*/
 
 triangle<=set_domain_set:
 {
-	nrel_congruence;
-	nrel_similarity
+	sc_node_norole_relation->nrel_congruence(*=>nrel_main_ru_idtf:[конгруэнтность*];;*);
+	sc_node_norole_relation->nrel_similarity(*=>nrel_main_ru_idtf:[подобие*];;*)
 };;
 
 
+triangle<=set_domain_super_set:
+{
+	sc_node_norole_relation->median(*=>nrel_main_ru_idtf:[медиана*];;*);
+	sc_node_norole_relation->height(*=>nrel_main_ru_idtf:[высота*];;*);
+	sc_node_norole_relation->bisector(*=>nrel_main_ru_idtf:[биссектриса*];;*);
+	sc_node_norole_relation->boundary(*=>nrel_main_ru_idtf:[граница*];;*);
+	sc_node_norole_relation->area(*=>nrel_main_ru_idtf:[площадь*];;*);
+	sc_node_norole_relation->perimeter(*=>nrel_main_ru_idtf:[периметр*];;*);
+	sc_node_norole_relation->side(*=>nrel_main_ru_idtf:[сторона*];;*);
+	sc_node_norole_relation->inner_corner(*=>nrel_main_ru_idtf:[внутренний угол*];;*)
+};;
 
 
+/* создал для SCnFieldSpecRelDomainIntersSet такую вот штуку set_domain_inters_set*/
 
 
+triangle<=set_domain_inters_set:
+{
+	set_nrel_inclusion;
+	set_nrel_intersection;
+	set_nrel_union;
+	set_subtraction;
+	set_nrel_subdividing
+};;
 
+set_definition_relation->triangle_defenition_relation;;
+triangle_defenition_relation=>main_ru_idtf:[Опр.(треугольник)];;
+triangle_defenition_relation=>nrel_definition:[Треугольник - это геометрическая фигура, 
+которая является результатом объединения понятия линейного треугольника и множества всех точек плоскости, 
+которые лежат между двух любых точек, принадлежащих этому линейному треугольнику.];;
+triangle_defenition_relation=>nrel_used_constants:
+{
+	sc_node_not_relation->linear_triangle(*=>nrel_main_ru_idtf:[линейный треугольник];;*);
+	sc_node_not_relation->plane(*=>nrel_main_ru_idtf:[плоскость];;*);
+	sc_node_not_relation->geometric_point(*=>nrel_main_ru_idtf:[геометрическая точка];;*);
+	sc_node_not_relation->_between(*=>nrel_main_ru_idtf:[между_];;*)
+};;
 
+/*тут чо-то про геометрию евклида 4го уровня? Это вообще нужно?*/
 
-
-
-
-
-
-
+nrel_single_assignment_statement->triangle_single_statement;;
+triangle_single_statement=>main_ru_idtf:[Утв.(треугольник; непрямолинейная тройка точек; вершина*)];;
+triangle_single_statement=>
 
 
 
