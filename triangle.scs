@@ -58,8 +58,10 @@ triangle<=set_domain_inters_set:
 	set_nrel_subdividing
 };;
 
-nrel_definition->triangle_defenition;;
+//nrel_definition->triangle_defenition;;
+hypermedia_nrel_definition->triangle_defenition;;
 triangle_defenition=>main_ru_idtf:[Опр.(треугольник)];;
+triangle_defenition->rrel_defined_notion:triangle;;
 
 triangle_defenition=>nrel_used_constants:
 {
@@ -69,7 +71,7 @@ triangle_defenition=>nrel_used_constants:
 	_between
 };;
 
-triangle_defenition=>nrel_translation:[Треугольник - это геометрическая фигура, 
+triangle_defenition=>hypermedia_nrel_translation:[Треугольник - это геометрическая фигура, 
 которая является результатом объединения понятия линейного треугольника и множества всех точек плоскости, 
 которые лежат между двух любых точек, принадлежащих этому линейному треугольнику.](*<-lang_ru;;*);;
 
