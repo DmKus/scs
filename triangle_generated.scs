@@ -1,5 +1,6 @@
 ﻿sc_node_not_relation->11937;;
 11937=>nrel_main_ru_idtf:[треугольник];;
+11937=>nrel_main_en_idtf:[triangle];;
 
 11937=>nrel_ru_idtf:[Класс треугольников];;
 
@@ -13,7 +14,6 @@
 
 11937=>nrel_ru_idtf:[многоугольник с тремя сторонами];;
 
-11937=>nrel_ru_idtf:[triangle];;
 
 11937<=set_nrel_inclusion:22826;;
 
